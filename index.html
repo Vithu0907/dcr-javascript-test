@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Data Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Country Data Visualization</h1>
+        
+        <div id="error-message" class="error"></div>
+        
+        <div class="form-container">
+            <form id="data-selection-form">
+                <fieldset>
+                    <legend>Select Data to Visualize</legend>
+                    
+                    <fieldset>
+                        <legend>By Country</legend>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="plotOption" value="population" checked>
+                                Population size
+                            </label>
+                            <label>
+                                <input type="radio" name="plotOption" value="borders">
+                                Number of borders
+                            </label>
+                            <label>
+                                <input type="radio" name="plotOption" value="timezones">
+                                Number of timezones
+                            </label>
+                            <label>
+                                <input type="radio" name="plotOption" value="languages">
+                                Number of languages
+                            </label>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>By Region</legend>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="plotOption" value="regionCountries">
+                                Number of countries in the region
+                            </label>
+                            <label>
+                                <input type="radio" name="plotOption" value="regionTimezones">
+                                Number of unique timezones in the region
+                            </label>
+                        </div>
+                    </fieldset>
+                    
+                    <button type="submit" id="update-chart">Update Chart</button>
+                </fieldset>
+            </form>
+        </div>
+        
+        <div id="chart-container">
+            <div class="loading">Loading data...</div>
+        </div>
+        
+        <div id="table-container">
+            <h2>Data Table</h2>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/dataProcessor.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
